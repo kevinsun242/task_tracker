@@ -7,6 +7,7 @@
       <th>Description</th>
       <th>Time</th>
       <th>Completed</th>
+      <th>Assignee</th>
 
       <th></th>
     </tr>
@@ -18,6 +19,7 @@
       <td><%= task.description %></td>
       <td><%= task.time %></td>
       <td><%= task.completed %></td>
+      <td><%= TaskTracker.Tasks.get_assignee(task.user_id).email %></td>
 
       <td>
         <%= link "Show", to: Routes.task_path(@conn, :show, task) %>
