@@ -31,7 +31,7 @@
           <%= if @current_user do %>
           <p class="my-3">
             User: <%= @current_user.email %> |
-            <%= link("Logout", to: Routes.session_path(@conn, :delete),
+            <%= link("Logout", class: "btn btn-danger", to: Routes.session_path(@conn, :delete),
               method: :delete) %>
           </p>
           <% else %>

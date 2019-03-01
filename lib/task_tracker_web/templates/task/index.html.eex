@@ -22,13 +22,13 @@
       <td><%= TaskTracker.Tasks.get_assignee(task.user_id).email %></td>
 
       <td>
-        <%= link "Show", to: Routes.task_path(@conn, :show, task) %>
-        <%= link "Edit", to: Routes.task_path(@conn, :edit, task) %>
-        <%= link "Delete", to: Routes.task_path(@conn, :delete, task), method: :delete, data: [confirm: "Are you sure?"] %>
+        <%= link "Show", class: "btn btn-primary", to: Routes.task_path(@conn, :show, task) %>
+        <%= link "Edit", class: "btn btn-secondary", to: Routes.task_path(@conn, :edit, task) %>
+        <%= link "Delete", class: "btn btn-danger", to: Routes.task_path(@conn, :delete, task), method: :delete, data: [confirm: "Are you sure?"] %>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Task", to: Routes.task_path(@conn, :new) %></span>
+<span><%= link "New Task", class: "btn btn-primary", to: Routes.task_path(@conn, :new) %></span>

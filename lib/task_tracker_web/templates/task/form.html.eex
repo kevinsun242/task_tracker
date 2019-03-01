@@ -7,19 +7,19 @@
 
   <div class="form-group">
     <%= label f, :title %>
-    <%= text_input f, :title, class: "form-control" %>
+    <%= text_input f, :title, class: "form-control", placeholder: "Title" %>
     <%= error_tag f, :title %>
   </div>
 
   <div class="form-group">
     <%= label f, :description %>
-    <%= textarea f, :description, class: "form-control" %>
+    <%= textarea f, :description, class: "form-control", placeholder: "Enter a description..." %>
     <%= error_tag f, :description %>
   </div>
 
   <div class="form-group">
     <%= label f, :time_in_increments_of_15_minutes %>
-    <%= number_input f, :time, class: "form-control", id: "time", step: 15, min: 0%>
+    <%= number_input f, :time, class: "form-control", id: "time", step: 15, min: 0, value: 0%>
     <%= error_tag f, :time %>
   </div>
 
