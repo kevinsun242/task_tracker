@@ -36,10 +36,13 @@
           </p>
           <% else %>
             <%= form_for @conn, Routes.session_path(@conn, :create),
-                [class: "form-inline"], fn f -> %>
-              <%= text_input f, :email, class: "form-control" %>
-              <%= submit "Login", class: "btn btn-secondary" %>
-            <% end %>
+                      [class: "form-inline"], fn f -> %>
+            <%= text_input(f, :email, class: "form-control col-4",
+              placeholder: "email") %>
+            <%= password_input(f, :password, class: "form-control col-4",
+              placeholder: "pass") %>
+            <%= submit "Login", class: "btn btn-secondary" %>
+          <% end %>
           <% end %>
         </div>
       </nav>
