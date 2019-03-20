@@ -115,4 +115,7 @@ defmodule TaskTracker.Users do
   def change_user(%User{} = user) do
     User.changeset(user, %{})
   end
+
+  alias TaskTracker.Users.User
+
 end

@@ -107,4 +107,7 @@ defmodule TaskTracker.Tasks do
   def change_task(%Task{} = task) do
     Task.changeset(task, %{})
   end
+
+  alias TaskTracker.Tasks.Task
+
 end
