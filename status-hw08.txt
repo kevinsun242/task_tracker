@@ -1,0 +1,39 @@
+
+Web Dev Fall 2018 HW08 Status
+
+Answer the following questions:
+
+
+1. What's your name?
+Kevin Sun
+
+
+2. What's the URL of the github repo with your work for this HW?
+https://github.com/kevinsun242/task_tracker
+Under the branch hw08_spa
+
+
+3. What's the version number of your github release?
+2.0
+
+
+4. What's the URL that you deployed to?
+tasks3.ksun.pw
+
+
+5. Is your app functionality complete? If not, what's missing?
+Right now I had trouble with getting the post requests to 
+create users and tasks. I have users logging in working and 
+displaying the current users and tasks.
+
+
+6. Is your app properly deployed? If not, what went wrong?
+Yes
+
+
+
+
+And here's a list of tasks for grading comments. Just leave this here:
+ - Development
+ - Deployment
+ - Submission
