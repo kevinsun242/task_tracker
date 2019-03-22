@@ -181,10 +181,11 @@ function Task(props) {
   let {task} = props;
   return <div className="card col-4">
     <div className="card-body">
-      <h2 className="card-title">{task.name}</h2>
-      <p className="card-text">{task.description} <br/>
-      time: {task.time} <br/>
-      completed: {task.completed}</p>
+      <h2 className="card-title">{task.title}</h2>
+      <p className="card-text">Description: {task.description} <br/>
+      Time: {task.time} <br/>
+      Completed: {task.completed}</p> <br/>
+      Assignee:
     </div>
   </div>;
 }
