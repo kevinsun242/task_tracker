@@ -1,7 +1,6 @@
 defmodule TaskTrackerWeb.FallbackController do
   @moduledoc """
   Translates controller action results into valid `Plug.Conn` responses.
-
   See `Phoenix.Controller.action_fallback/1` for more details.
   """
   use TaskTrackerWeb, :controller
@@ -18,5 +17,11 @@ defmodule TaskTrackerWeb.FallbackController do
     |> put_status(:not_found)
     |> put_view(TaskTrackerWeb.ErrorView)
     |> render(:"404")
+  end
+
+  def call(conn, {:error, "invalid password"}) do
+    conn
+    |> put_resp_header("content-type", "application/json; charset=UTF-8")
+    |> send_resp(:unprocessable_entity, Jason.encode!(%{error: "auth failed"}))
   end
 end

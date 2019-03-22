@@ -39,11 +39,27 @@ defmodule TaskTracker.Users do
 
   # below get_user!
   def get_user(id), do: Repo.get(User, id)
+
+    @doc """
+  Authenticates a user.
+  Returns {:ok, user} on success, or {:error, msg} on failure.
+  """
+  def authenticate_user(email, password) do
+    Repo.get_by(User, email: email)
+    |> Argon2.check_pass(password)
+  end
   
   def get_user_by_email(email) do
     Repo.get_by(User, email: email)
   end
 
+  def get_and_auth_user(email, password) do
+    user = get_user_by_email(email)
+    case Comeonin.Argon2.check_pass(user, password) do
+      {:ok, user} -> user
+      _else       -> nil
+    end
+  end
 
   def get_users() do
     users = Repo.all(User)
